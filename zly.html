@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+</head>
+<body id="main">
+	<header id="title">
+	 <h1>周杰伦</h1>
+	</header>
+	<main>
+        <style> /* 轮播图片的样式设置 */
+        #box{
+        width:660px;
+        height:330px;
+        border:5px solid #e5e5e5;
+        margin:20px auto;
+        position:relative;
+         }
+        #img{
+        width:660px;
+        height:330px;
+        }
+        #lunbo-title{
+        height:40px;
+        line-height:40px;
+        position:absolute;
+        right:15px;
+        color:#fff;
+        font-size:14px;
+        }
+        #lunbo-num{
+        height:40px;
+        line-height:40px;
+        position:absolute;
+        z-index: 11;
+        left:15px;
+        color:#fff; /* 白色*/
+        font-size:14px;
+        }
+        .wrap-prev-next{
+        width:100%;
+        height:40px;
+        position:absolute;
+        z-index: 10;
+        background: #000;
+        line-height:30px;
+        left:0;
+        bottom:-20px;
+        opacity:0.8;
+        }
+        .prev-next{
+        width:40px;
+        height:50px;
+        line-height:50px;
+        position:absolute;
+        top:145px;
+        font-size:28px;
+        color:#FFF;
+        text-decoration:none;
+        }
+        a:hover {
+           opacity:0.3;   /* 不透明程度*/
+        }
+        #prev {
+                left:5px;
+            }
+        #next (
+                right:5px;
+            }
+        </style>
+    <body>
+        <div id="box">
+            <a id="imga" href="" target="_blank">
+                <img id="img" />
+            </a>
+            <!-- <p id="text1"></p><p id="text2">图片文字加载中……</p> -->
+            <p class="wrap-prev-next">
+                <a id="lunbo-title">图片文字加载中……</a>
+                <a id="lunbo-num"></a>
+            </p>
+            <a id="prev" class="prev-next" href="javascript:void(0)">《</a>  <!-- 轮播按键设置 -->
+            <a id="next" class="prev-next" href="javascript:void(0)">》</a>
+        </div>
+    </body>
+    <script>
+        window.onload= function(){
+             /*定义图片变量*/
+            var oBox=document.getElementById("box");
+
+            var imga = document.getElementById("imga");
+
+            var oImg=document.getElementById("img");
+
+            var oText1=document.getElementById("lunbo-title");
+
+            var p1=document.getElementById("p1");
+
+            var oText2=document.getElementById("lunbo-num");
+
+            var oPrev=document.getElementById("prev");
+
+            var oNext=document.getElementById("next");
+              /*轮播图片的网页链接地址*/
+            var arrSrc=[
+
+            "http://pic.rmb.bdstatic.com/bb967520ea98667b783920ab03cc53b9.jpeg",
+
+            "http://www.juxing.cc/bdimages/upload1/20170704/1499152378127550.jpg",
+
+            "http://tvax2.sinaimg.cn/crop.0.0.901.901.1024/007n1fqwly8fw23un1balj30p10sgtea.jpg",
+
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591466631748&di=76840467446535d2295949bfd2003120&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn07%2F210%2Fw640h370%2F20180703%2Faaf1-hevauxi3284808.jpg",
+
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591466631747&di=c5751478c6599b39d11e69f26313e893&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F8%2F57de291537a77.jpg%3Fdown",
+
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591466669569&di=fa4173452360b15d82ce2fe43bd6ced7&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%3D580%2Fsign%3D4d10342c43540923aa696376a259d1dc%2F8a209058d109b3de5c232e67c6bf6c81810a4c94.jpg",
+
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591466669568&di=96f886263328ca35f6621a25d5b9a231&imgtype=0&src=http%3A%2F%2Fimg5.pcpop.com%2FArticleImages%2F730x547%2F3%2F3575%2F003575294.jpg"];
+
+            var arrTxt=["1","2","3","4","5","6","7"];
+             /* 设置点击图片后的链接地址*/
+            var arrHref=["https://music.163.com/#/artist?id=6452&market=baiduqk",
+
+            "https://music.163.com/#/artist?id=6452&market=baiduqk",
+
+            "https://music.163.com/#/artist?id=6452&market=baiduqk",
+
+            "https://music.163.com/#/artist?id=6452&market=baiduqk",
+
+            "https://music.163.com/#/artist?id=6452&market=baiduqk",
+
+            "https://music.163.com/#/artist?id=6452&market=baiduqk",
+
+            "https://music.163.com/#/artist?id=6452&market=baiduqk"];
+
+            var num=0;
+            function lunboFun(){   /*轮播图片功能*/
+
+                imga.href= arrHref[num]; 
+
+                oImg.src = arrSrc[num];
+
+                oText1.innerHTML= num+1 +"/" + arrSrc.length; 
+         
+		        oText2.innerHTML=arrTxt[num];
+            }
+
+            SliderInit();
+            oPrev.onclick = function(){
+                num--;
+                if(num==-1){ 
+                    num=arrSrc.length-1;
+                }
+                lunboFun();
+            };
+
+            oNext.onclick = function(){  /*点击轮播图片的功能*/
+                num++;
+                if(num==arrTxt.length){
+                    num=0;
+                }
+                lunboFun();
+            }
+            function SliderInit() {      
+                lunboFun();
+                setInterval(function(){
+                    num ++;
+                    if (num==arrSrc.length){
+                    num = 0;
+                }
+                lunboFun();
+                },5000);  /*自动轮播时长设置*/
+            }
+        }
+    </script>
+	<head> 
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+    <body>
+    	<div id="app">
+    		<h1>人物关系</h1>
+    		<hr/>
+    		<ul>
+    			<li v-for="item in list">
+    				<span>{{item.relation}}------{{item.name}}------{{item.src}}</span>   
+					<image class="image" :src="'http://localhost/image/'+item.src" style="width:300px;height:300px" controls></image>  <!--显示数据库存储的图片 -->
+    			</li>
+    		</ul>	
+    	</div>
+    	<script type="text/javascript">   /*读取数据库内容*/
+    		new Vue({
+    			el:'#app',
+    			data:{
+    				list:[]
+    			},
+    			created(){
+    				fetch('/list').then(res=>{
+    					return res.json();
+    				}).then(data=>{
+    					this.list=data.data
+    				})
+    			}
+    		})		
+    	</script>
+    </body>
+	<div id="tribute-info">
+	 	<h2>演艺经历</h2>
+		<div class="span-downline"></div>
+		  <div class="txt">
+			<strong>2000年,</strong>在杨峻荣的推荐下，周杰伦开始演唱自己创作的歌曲；11月7日，发行首张个人专辑《Jay》，并包办全部歌曲的作曲、和声编写以及监制工作  ；该专辑融合了R&B、hip-hop等多种音乐风格，其中主打歌曲《星晴》获得第24届十大中文金曲优秀国语歌曲金奖 ，而周杰伦也凭借该专辑在华语乐坛受到关注，并于次年获得第12届台湾金曲奖最佳流行音乐演唱专辑奖、第12届台湾金曲奖最佳制作人提名、第12届台湾金曲奖最佳作曲人提名。
+		  </div>
+		<div class="txt">
+			<strong>2001年9月，</strong>周杰伦发行了国语专辑《范特西》，他除了担任专辑的制作人外，还包办了专辑中所有歌曲的作曲；该专辑是周杰伦确立其唱片风格的作品，其中结合中西方音乐元素的主打歌《双截棍》成为饶舌歌曲的代表作之一 ；该专辑发行后也让周杰伦打开东南亚市场 ，并于次年获得第13届台湾金曲奖最佳专辑制作人奖、最佳作曲人奖、最佳流行音乐专辑奖以及香港唱片销量大奖颁奖典礼十大销量国语唱片等奖项 ；10月，为李玟创作融合中西方音乐元素的歌曲《刀马旦》；12月24日，发行EP《Fantasy + Plus》，收录了他在桃园巨蛋演唱会上演唱的《你比从前快乐》、《蜗牛》等歌曲  ；同年，获得第19届十大劲歌金曲颁奖典礼最受欢迎唱作歌星金奖、叱咤乐坛流行榜颁奖典礼叱咤乐坛生力军男歌手金奖等奖项 。
+		</div>
+		<div class="txt">
+			<strong>2002年，</strong>参演个人首部电视剧《星情花园》；2月，在新加坡新达 城国际会议展览中心举行演唱会；7月，发行专辑《八度空间》，除了包办专辑中所有歌曲的作曲外，他还担任专辑的制作人 ；该专辑以R&B曲风的歌曲为主，并获得g-music风云榜白金音乐奖十大金碟奖、华语流行乐传媒大奖十大华语唱片奖、新加坡金曲奖大奖年度最畅销男歌手专辑等奖项 ；9月28日，在台北体育场举行“THE ONE”演唱会 ；12月12日至16日，在香港红磡体育馆举行5场“THE ONE”演唱会 ；12月25日，在美国拉斯维加斯举办“THE ONE”演唱会；同年，获得第1届MTV日本音乐录影带大奖亚洲最杰出艺人奖、第2届全球华语歌曲排行榜最受欢迎创作歌手、第9届新加坡金曲奖亚太最受推崇男歌手等奖项  。
+		</div>
+		<div class="txt">
+			<strong>2003年2月，</strong>成为美国《时代周刊》亚洲版的封面人物”  ；5月17日，在马来西亚吉隆坡默迪卡体育场举行“THE ONE”演唱会；7月16日，周杰伦专辑《叶惠美》中的主打歌曲《以父之名》在超过50家电台首播，并有8亿人收听，而主打歌首播的当日也被这些电台定为“周杰伦日” ；7月31日，发行专辑《叶惠美》，他不仅包办了所有歌曲的作曲，还担任专辑的制作人和造型师 ；该专辑发行一个月在亚洲的销量突破200万张 ，并于次年获得第15届金曲奖最佳流行音乐演唱专辑奖、第4届全球华语歌曲排行榜颁奖典礼年度最受欢迎专辑等奖项 ；专辑主打歌曲《东风破》是周杰伦具有代表性的中国风作品之一  ，而他亦凭借这首歌曲获得第四届华语音乐传媒大奖最佳作曲人奖 ；9月12日，在北京工人体育场举行“THE ONE”演唱会 ；11月，发行EP《寻找周杰伦》 ；12月12日，在上海体育场举办“THE ONE”演唱会，并演唱了变奏版的《双截棍》、加长版的《爷爷泡的茶》等歌曲 ；同年，出演电影处女作《寻找周杰伦》。
+		</div>
+		<div class="txt">
+			<strong>2004年1月21日，</strong>首次登上央视春晚舞台，并演唱歌曲《龙拳》；3月，在第4届音乐风云榜中，获得台湾地区最受欢迎男歌手、年度风云大奖、年度港台及海外华人最佳制作人等奖项；8月3日，发行融合Hip-hop、R&B、古典音乐等曲风的专辑《七里香》；该专辑发行当月在亚洲的销量突破300万张，周杰伦也凭借这张专辑获得第16届世界音乐大奖中国区最畅销艺人奖，而专辑同名主打歌《七里香》则获得第27届十大中文金曲优秀流行国语歌曲奖金奖、第5届全球华语歌曲排行榜年度25大金曲等奖项 ；10月起，在台北、香港、洛杉矶、蒙特维尔等地举行“无与伦比世界巡回演唱会” 。
+		</div>
+		
+	<div id="tribute-footer"> 
+		 <a href="https://baike.baidu.com/item/%E5%91%A8%E6%9D%B0%E4%BC%A6" target="_blank" id="tribute-link"><button>了解更多</button></a>
+	</div>
+	<p>  <!-- 以json格式返回自己的学号和姓名 -->
+	Name: <span id="jname"></span><br />
+	xh: <span id="jxh"></span><br />
+	</p>
+	<script type="text/javascript">
+	var JSONObject= {
+	"name":"zhangliyan",
+	"xh":"js17150145"};
+	document.getElementById("jname").innerHTML=JSONObject.name
+	document.getElementById("jxh").innerHTML=JSONObject.xh
+	</script>
+	</div>
+	</main>
+</body>
+<style>  /* 演艺经历全部内容的样式设置*/
+body {
+			background-color: rgba(243,243,243,1.00);
+			font-family: “Arial”,”Microsoft YaHei”,”黑体”,”宋体”,sans-serif;  
+			font-size: 14px;
+			margin: 0 auto;	 
+		}
+		#title,footer,{
+			margin:3% auto;
+		}
+		#title>h1, p ,h2{
+			text-align: center;
+		}
+		#img-div{
+			background-color: #fff;
+			border: 0px solid rgba(145,145,145,0.5); /*固定框架*/
+			padding: 3%;
+			margin-bottom: 5%;
+		}
+		#img-div img{
+			max-width: 50%; 
+			display: block; 
+			border-radius: 5px; 
+			margin: 0 auto;
+		}
+		#tribute-info {
+			max-width: 1000px;
+			width: 100%;
+			margin: 0 auto;
+			padding: 5% auto;
+		}
+		#tribute-info .txt{
+			border-left: 3px solid rgba(49,110,253,1.00);
+			padding:2%;
+			margin: 2% 5%;
+			text-align: justify;
+			color: rgba(38,38,38,1.00);
+			background-color: rgba(255,255,255,1.00);
+		}
+		#tribute-footer {
+			text-align: center;
+			margin-bottom: 5%;
+		}
+		#tribute-footer button{
+			background: rgba(49,110,253,1.00);
+			color:#fff;
+			border: none;
+			padding: 10px 50px;
+			border-radius: 5px;
+		}
+		#tribute-footer button:hover{
+			background-color: black;
+			color: #fff;
+		}
+		footer a{
+			text-decoration: none;
+			color: rgba(33,33,33,1.00);
+		}
+		footer a:hover{
+			color: rgba(49,110,253,1.00);
+		}
+		.span-downline{
+			background:rgba(49,110,253,1.00);
+			max-width: 50px;
+			min-height: 2px;
+			margin: 0 auto 3% auto;
+		}
+</style>
+</html>

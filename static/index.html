@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		$.get("http://localhost:8089/image",function(data,status){
+			console.log(data);
+			//alert("数据: " + data + "\n状态: " + status);
+			//obj = JSON.parse(data);
+			console.log('------------');
+			console.log(data.data[0].src);
+			
+			//'http://localhost/image/'+obj.src
+			//document.getElementById("demo").src = 'http://127.0.0.1:8090/static/' + data.data[0].src;
+			document.getElementById("demo").src = 'http://localhost:8090/static/author.jpg'
+		});
+	});
+});
+</script>
+</head>
+<body>
+
+<button>发送一个 HTTP GET 请求并获取返回结果</button>
+<br />
+<img id="demo" />
+</body>
+</html>

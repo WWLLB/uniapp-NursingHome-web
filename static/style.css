@@ -1,0 +1,70 @@
+/* main.css */
+@import '@/static/style.css';
+
+
+
+/* 定义标题样式 */
+.uni-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 定义flex容器样式 */
+.uni-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+/* 定义横向布局样式 */
+.uni-row {
+  flex-direction: row;
+}
+
+/* 定义纵向布局样式 */
+.uni-column {
+  flex-direction: column;
+}
+
+/* 定义子元素的样式 */
+.flex-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:150px;
+  height: 150px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* 定义不同颜色的子元素 */
+.uni-bg-red {
+  background-color: red;
+}
+
+.uni-bg-green {
+  background-color: green;
+}
+
+.uni-bg-blue {
+  background-color: blue;
+}
+.bg-image {
+	  background-image: url('/static/images//bls.jfif');
+	  background-size: cover;
+	  background-position: center center;
+	}
+.bg-image1{
+	  background-image: url('/static/images///bls6.jfif');
+	  background-size: cover;
+	  background-position: center center;
+	}
+	
+	.bg-image2{
+		  background-image: url('/static/images//bls4.jfif');
+		  background-size: cover;
+		  background-position: center center;
+		}

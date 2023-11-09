@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="/static/index.css"/>
+	</head>
+	<body>
+		todolist
+		<h1>{{datas.appName}}</h1>
+		<a href="/getadd">get添加商品</a>
+		<a href="/postadd">post添加商品</a>
+		<ul>
+			{% for item in datas.list %}
+			<li class="app">{{item.id}}--{{item.name}}--{{item.price}}--{{item.number}}</li>
+			{%endfor%}
+		</ul>
+	</body>
+</html>

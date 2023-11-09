@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<h1>{{datas.appName}}</h1>
+		<img src="anime1.jpg" alt="图片描述">
+		<hr />
+		<form action="/deleteData" method="POST">
+			商品名称:<input type="text" name="name"/>
+			商品价格:<input type="text" name="price"/>
+			商品库存:<input type="text" name="number"/>
+			<button>提交删除&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+		</form>
+		<form action="/postData" method="POST">
+			商品名称:<input type="text" name="name"/>
+			商品价格:<input type="text" name="price"/>
+			商品库存:<input type="text" name="number"/>
+			<button>提交添加</button>
+		</form>
+		<form action="/update" method="POST">
+			商品名称:<input type="text" name="name"/>
+			商品价格:<input type="text" name="price"/>
+			商品库存:<input type="text" name="number"/>
+			<button>提交更改</button>
+		</form>
+	</body>
+</html>

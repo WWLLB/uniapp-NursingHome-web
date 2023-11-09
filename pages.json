@@ -1,0 +1,103 @@
+{
+	"pages": [
+	  {
+	    "path": "pages/index/index",
+	    "style": {
+	      "navigationBarTitleText": "吃在南京"
+	    }
+	  },
+	  {
+	    "path": "pages/List/list",
+	    "style": {
+	      "navigationBarTitleText": "吃在南京"
+	    }
+	  },
+	  {
+	    "path": "pages/news/news",
+	    "style": {
+	      "navigationBarTitleText": "吃在南京"
+	    }
+	  },
+	  {
+	    "path": "pages/data/data",
+	    "style": {
+	      "navigationBarTitleText": "吃在南京"
+	    }
+	  },
+	  {
+	    "path": "pages/myself/1",
+	    "style": {
+	      "navigationBarTitleText": "uni-app"
+	    }
+	  },
+	  {
+	    "path": "pages/youname/youname",
+	    "style": {
+	      "navigationBarTitleText": "uni-app"
+	    }
+	  }, 
+	  {
+	    "path": "pages/index",
+	    "style": {
+	      "navigationBarTitleText": "吃在南京"
+	    }
+	  },
+	  {
+	    "path": "pages/menu",
+	    "style": {
+	      "navigationBarTitleText": "吃在南京"
+	    }
+	  },
+	  {
+	    "path": "pages/menu1",
+	    "style": {
+	      "navigationBarTitleText": "吃在南京"
+	    }
+	  }
+	  
+	],
+
+	"tabBar": {
+	  "color": "#7A7E83",
+	  "selectedColor": "#3cc51f",
+	  "borderStyle": "black",
+	  "backgroundColor": "#ffffff",
+	  "list": [
+	      {
+	          "pagePath": "pages/index",
+	          "text": "首页",
+			  "iconPath": "static/images/application.png",
+			  "selectedIconPath": "static/images/application.png"
+	      },
+		  {
+		  	  "pagePath": "pages/menu",
+		  	  "text": "点餐",
+		  	  "iconPath": "static/images/eat.png",
+		  	  "selectedIconPath": "static/images/eat.png"
+		  		  },
+		  
+	      {
+	          "pagePath": "pages/List/list",
+	          "text": "功能",
+			  "iconPath": "static/images/shopping.png",
+			  "selectedIconPath": "static/images/shopping.png"
+	      },
+	      {
+	          "pagePath": "pages/index/index",
+	          "text": "我的",
+	          "iconPath": "static/images/homepage.png",//`iconPath` 表示未选中时的图标路径，即当 tabBar 中的某个 tab 没有被选中时，该 tab 显示的图标路径。
+	          "selectedIconPath": "static/images/homepage.png"//`selectedIconPath` 表示选中时的图标路径，即当 tabBar 中的某个 tab 被选中时，该 tab 显示的图标路径。
+	      }
+	  ]
+
+	},
+
+
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}
